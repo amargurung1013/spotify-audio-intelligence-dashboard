@@ -13,9 +13,9 @@ test_mode = st.sidebar.checkbox("Testing Mode (Faster)", value=True)
 def load_and_clean_data(is_testing):
     # Use the argument to decide how much data to load
     if is_testing:
-        df = pd.read_csv("../data/spotify/data.csv", nrows=5000)
+        df = pd.read_csv("/data/spotify/data.csv", nrows=5000)
     else:
-        df = pd.read_csv("../data/spotify/data.csv")
+        df = pd.read_csv("/data/spotify/data.csv")
     
     # ... all your cleaning/exploding logic here ...
     df["clean_artists"] = df["artists"].str.replace(r"[\[\]'\" ]", "", regex=True).str.split(",")
